@@ -36,8 +36,8 @@
         text-indent: 50px
       }
 
-      p:has(img) {text-indent: 0px}
-
+      p:has(img), li > p {text-indent: 0px}
+      
       li {font-size: 16px}
 
       .p-3img > p:nth-of-type(2) {
@@ -61,7 +61,7 @@
 
       .widgets img {height: 100%; width: 100%; object-fit: contain}
 
-      .widgets p:nth-of-type(2) {
+      .widgets p:has(img) {
          position: absolute;
          right: 8%;
          top: 30%;
@@ -69,7 +69,19 @@
          height: 50%
       }
 
-      .heat-index img {max-height: 175px;}
+      .heat-index ul {width: 43%; position: absolute; left: 8%}
+
+      .heat-index p:has(img) {
+         position: absolute;
+         right: 8%;
+         width: 40%;
+         height: 30%
+      }
+
+      .heat-index p:nth-of-type(2), .heat-index ul:nth-of-type(1) {top: 27%}
+      .heat-index p:nth-of-type(3), .heat-index ul:nth-of-type(2) {top: 58%}
+
+      .heat-index img {width: 100%; height: 100%;}
 
       .title-page h1 {text-align: center;}
 
@@ -216,7 +228,7 @@ This provides the users to quickly access relevant data from the dashboard as a 
 * Next is the status of that datasource, providing whether this data is increasing or deacreasing from the last hour, as well as whether or not the threshold has been breached.
 * Lastly, the last two columns provides the average values from the last day, and the last week, respectively, in order to easily compare them to the latest data.
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/46c03e47421e47624d68605fb5f4d466173b63ee/FarmWatch_Remark/assets/14-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/d68f0b2c010d668a218a1dfc12df9af6e3a60bcf/FarmWatch_Remark/assets/14-1.png?raw=true)
 
 
 ---
@@ -249,7 +261,7 @@ class: widgets
    * Third, this provides trend data, showcasing whether the current reading is increasing or decreasing for the current day.
    * Lastly, this should show the average record from the day before and the week before to allow quick comparison between the current readings to the previous readings.
 
-   ![image](https://github.com/Jeffrey-nrqz/remarks/blob/46c03e47421e47624d68605fb5f4d466173b63ee/FarmWatch_Remark/assets/17-1.png?raw=true)
+   ![image](https://github.com/Jeffrey-nrqz/remarks/blob/d68f0b2c010d668a218a1dfc12df9af6e3a60bcf/FarmWatch_Remark/assets/17-1.png?raw=true)
 
 ---
 
@@ -263,7 +275,7 @@ class: widgets
    * **Daily Feed Consumption:** inputted from the app, this allows the users to track how much feed was consumed in a daily basis, and compare it to previous data. Additionally, the timestamp of when the data was last updated is also shown.
    * **Average Daily Feed a week before, and a day before:** to allow quick comparison between the data, without needing to look at the graphs.
 
-   ![image](https://github.com/Jeffrey-nrqz/remarks/blob/46c03e47421e47624d68605fb5f4d466173b63ee/FarmWatch_Remark/assets/18-1.png?raw=true)
+   ![image](https://github.com/Jeffrey-nrqz/remarks/blob/d68f0b2c010d668a218a1dfc12df9af6e3a60bcf/FarmWatch_Remark/assets/18-1.png?raw=true)
 
 ---
 
@@ -279,7 +291,7 @@ class: widgets
    * **Average Mortality from a week before, and a day before:** allows quick comparison between the data.
 
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/46c03e47421e47624d68605fb5f4d466173b63ee/FarmWatch_Remark/assets/19-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/d68f0b2c010d668a218a1dfc12df9af6e3a60bcf/FarmWatch_Remark/assets/19-1.png?raw=true)
 
 ---
 
@@ -287,13 +299,13 @@ class: heat-index
 
 ### Heat Index Widget
    Uses the Temp and RH data from each device and create an average heat index chart for the building. Additionally, this chart also provides Threshold details, similar to the 3 device widget. 
-- The chart could look like this, which would look like any other heat index map.
+- The chart could look like this, which would look like any other heat index map. This should provide clear relationship between relative humidity and temperature in order to tell the heat index.
 
 ![image](https://github.com/Jeffrey-nrqz/remarks/blob/1cbabbaa75afd7ce99d7c302325d88a156be8c88/FarmWatch_Remark/assets/20-1.png?raw=true)
 
-- Or look like this, similar to already created charts for the dashboard.
+- Or look like this, similar to already created charts for the dashboard. This will provide coherence between all the charts within the dashboard.
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/46c03e47421e47624d68605fb5f4d466173b63ee/FarmWatch_Remark/assets/20-2.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/d68f0b2c010d668a218a1dfc12df9af6e3a60bcf/FarmWatch_Remark/assets/20-2.png?raw=true)
 
 ---
 
@@ -331,7 +343,7 @@ class: widgets
   - Average Live Weight
   - Feed Consumption
 
-  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/46c03e47421e47624d68605fb5f4d466173b63ee/FarmWatch_Remark/assets/23-1.png?raw=true)
+  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/d68f0b2c010d668a218a1dfc12df9af6e3a60bcf/FarmWatch_Remark/assets/23-1.png?raw=true)
 
 ---
 
@@ -352,14 +364,14 @@ class: widgets
   - Average Live Weight
   - Feed Consumption
 
-  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/46c03e47421e47624d68605fb5f4d466173b63ee/FarmWatch_Remark/assets/24-1.png?raw=true)
+  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/d68f0b2c010d668a218a1dfc12df9af6e3a60bcf/FarmWatch_Remark/assets/24-1.png?raw=true)
 
 ---
 
 ## Other Cycle Details
    Some details cannot be disclosed in a graph or chart, as such, it is important to provide a way to present such cycle data within the historic dashboard in a way that best suits that data. As such, the other details widget is create in order to support those data. This widget is a table widget made to showcase datasets that are not timeseries, such as the population and feed count, their timeseries counterpart, mortality and feed consumption, respectively, can be portrait in chart and graphs, but these datasets can be shown best in a table, providing their initial data and their last data, as well as the ratio at which these data has changed.
 
-   ![image](https://github.com/Jeffrey-nrqz/remarks/blob/46c03e47421e47624d68605fb5f4d466173b63ee/FarmWatch_Remark/assets/25-1.png?raw=true)
+   ![image](https://github.com/Jeffrey-nrqz/remarks/blob/d68f0b2c010d668a218a1dfc12df9af6e3a60bcf/FarmWatch_Remark/assets/25-1.png?raw=true)
 
 ---
 
@@ -392,7 +404,7 @@ The widget allows users, mainly office user and owners, to input data that the b
   - Ammonia Upper/Lower Threshold
   - Starting population
 
-  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/46c03e47421e47624d68605fb5f4d466173b63ee/FarmWatch_Remark/assets/28-1.png?raw=true)
+  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/d68f0b2c010d668a218a1dfc12df9af6e3a60bcf/FarmWatch_Remark/assets/28-1.png?raw=true)
 
 ---
 class: widgets
@@ -408,7 +420,7 @@ This widget allows users to quickly access the general details for each cycles, 
   - Cycle Name
   - Notes
 
-  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/46c03e47421e47624d68605fb5f4d466173b63ee/FarmWatch_Remark/assets/29-1.png?raw=true)
+  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/d68f0b2c010d668a218a1dfc12df9af6e3a60bcf/FarmWatch_Remark/assets/29-1.png?raw=true)
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
