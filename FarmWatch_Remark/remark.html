@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; display: flex}
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        max-height: 500px;
+        margin: 5px;
+      }
+
+      p {
+        text-align: justify;
+        font-size: 18px;
+        text-indent: 50px
+      }
+
+      p:has(img) {text-indent: 0px}
+
+      li {font-size: 16px}
+
+      .p-3img > p:nth-of-type(2) {
+        display: flex;
+        height: 400px;
+      }
+
+      .img-disp p {text-align: center;}
+      .img-disp img {max-height: 450px;}
+
+      .par-img p:first-of-type {width: 60%;}
+
+      .par-img p:nth-of-type(2)  {
+         position: absolute;
+         right: 10%;
+         top: 15%;
+         height: 70%
+      }  
+
+      .widgets > ul {width: 45%}
+
+      .widgets p:nth-of-type(2) {
+         position: absolute;
+         right: 8%;
+         top: 30%;
+         width: 40%;
+         height: 50%
+      }
+      .widgets img {width: 100%; height: 100%}
+
+      .heat-index img {max-height: 175px;}
+
+      .title-page h1 {text-align: center;}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Farm Watch
+
+---
+class: title-page
+
+# Users
+
+   This will the group of people who will be using the app and dashboard, grouped based into their jobs.
+
+### - [Field User](#3)
+### - [Office User](#3)
+### - [Data Analyst User](#4)
+### - [Owner](#4)
+
+
+---
+
+### Field User
+   Field users are the workers who tend to the buildings, coops, and chickens. Their primary job with the dashboard and the app is to log the necessary data that can come from the buildings such as the **Average Live Weight, Mortality, and Feed Consumption**, additionally, the **Feed Delivery** is also added in order to easily buy Feeds from the app.
+   
+   It is important that the functions that the app can provide to the field users must be accessible to them in remote areas, with or without mobile data, and must be able to work even in low specs mobile phones.
+
+### Office User
+   Office users  are the workers who manages the farm from their offices. Their job with the dashboard and the app is to allow quick monitoring of all the buildings within their computers, allows quick accessible data. The main dashboard itself provide enough data to diagnose whether the farms are running smoothly, or should there be changes that should be done with the information presented to them.
+
+   The Data from the sensors **(Temperature, Relative Humidity, Ammonia, Carbon Dioxide)** and from the app **(Feed Consumption, Mortality, Average Live Weight, and Feed Delivery)** be easily read from the main dashboard, while a more in-depth database can be accessible by going through the per building dashboard (snapshot/historic dashboard).
+
+---
+
+### Data Analyst User
+   Data Analysts collects data from the dashboard and be able to infer conclusion and decisions from the data collected. The users must have direct access to all the data that the dashboard can collect, and be able to easily compare them to each other.
+
+### Owner
+   The owner should have quick access to all data just like the data analyst and office users. The owner should have full access and control to the app and dashboard.
+
+---
+class: title-page
+
+# App
+
+This are the list of screens that will be available to the users that are using the app.
+
+### - [Main Menu](#6)
+### - [User Input](#7)
+### - [Feed Delivery](#8)
+### - [Dashboard](#11)
+### - [List Screen](#9)
+### - [Settings](#10)
+
+---
+class: par-img
+### Main Menu
+
+The main menu screen is the first screen that the app user will see after their initial logging in to the app. The screen provides quick access to everything that the app provides, mainly the User Input Screens, the ALW, Mortality, Feed Consumption, and Feed Delivery. Additionally, the dashboard can also be accessed from the app by clicking the dashboard button. Lastly, more buttons are available in order to control the app and connection to the server as a whole, the settings button on the upper right allows inputting the device ID of each building, the list button on the lower right which allows users to upload the data previously inputted into the server once connection is secured. Lastly, a logout button is available if logging out is necessary.
+
+
+![image](https://github.com/ucamptech/silikon_yokeijo/blob/621ac181282311ca267ecf4e3ca053b6fe08591d/FarmWatch_Remark/assets/06-1.png)
+
+---
+class: p-3img
+
+### User Input
+
+The User Input Screens are made to easily input data from the building into the app and into the server. The users, mainly the field users, can use the app, without mobile data, and log their readings for the ALW, Mortality, and Feed Consumption into the app. The app logs the data inputted to the screen as well as the timestamp of logging, and send the data to the server once a connection is secured.
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427398424-84d7f684-b0f9-4e6a-a08a-106576d0d4ec.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250327%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250327T080610Z&X-Amz-Expires=300&X-Amz-Signature=c49a42f45e821a330a1d3c7438113737309b8c52b9a9ad2f31dfb781b7559d79&X-Amz-SignedHeaders=host)
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427398548-82dbcc0f-dd62-406a-a2c7-5fa0f7d74a9b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250327%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250327T080623Z&X-Amz-Expires=300&X-Amz-Signature=38f605ab7b118924088615fdaece6ab1dd7f5d62e8151662a1de5bf87e5ce013&X-Amz-SignedHeaders=host)
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427398601-270c5079-f75f-4236-8219-a890d3f790ed.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250327%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250327T080637Z&X-Amz-Expires=300&X-Amz-Signature=0e60ef70739f24a4f6f365e0b2e409d5365d7c6ad8596ac9d0fbbd71c79da43d&X-Amz-SignedHeaders=host)
+
+---
+class: par-img
+
+### Feed Delivery
+
+The Feed Delivery screen, much like the user input screens, allows the user to input the necessary data to the app. However, the main purpose of this screen is to allow the app user to see the current amount of feeds still in the building, as well as order feeds if need be.
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427398716-adc7db7f-f769-40e4-9832-98cc643c7c46.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250327%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250327T090448Z&X-Amz-Expires=300&X-Amz-Signature=f68a4f49d597371db57d3fc399b9a8822726f8f609faf20829a29f47450b1926&X-Amz-SignedHeaders=host)
+
+---
+class: par-img
+
+### List Screen 
+
+The List Screen is where all the logs can be seen by the users before they are uploaded to the server. The users can see and edit the logs from all the user inputs from this screen, see when and who inputted the data, as well as delete it if needed. Lastly, a button is present at the bottom when there are data to be uploaded to the server. The button checks the connection and sends the data to the building selected, as configured in the settings screen.
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427808833-5e40ca07-0529-4eb9-9ca2-8501caac2194.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250328T015641Z&X-Amz-Expires=300&X-Amz-Signature=6f6c61b76b43c75de4cbdd8092e669d0c1e8eba116d4179cfd2dbbb40bde6452&X-Amz-SignedHeaders=host)
+
+---
+class: par-img
+
+### Settings
+
+
+The settings screen is where the users can configure the building profile, specifically, the building ID, as presented in the server. The user can select the building from the drop-down menu, after which, their building ID will present in the textbox below. The user can edit this then save using the save button right below the text box. The building ID needs to be similar to the building ID from the server so that the app could send the data specifically to that building without complications.
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427808704-07494815-d442-4bad-a891-c2219bd90bd7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250328T015304Z&X-Amz-Expires=300&X-Amz-Signature=9cf56b0ee25238d2d120f23644555d75655a6d6e0250dbbbe1361ace085a03f7&X-Amz-SignedHeaders=host)
+
+---
+class: title-page
+
+# Dashboards
+
+The dashboards are the main screens that the users can use to visualize and read the data that the buildings have, the dashboards have a general view, which is made to quickly read the necessary data for all buildings, as well as an in-depth view, made for each building, to allow users to have a more in depth analysis towards the data. Additionally, the last view is made to allow user to input references and inputs which are needed for each cycle.
+
+### - [Overview/Main](#12)
+### - [Snapshot View](#15)
+### - [Historic View](#21)
+### - [Farm Input/Cycle Maintenance View](#26)
+
+---
+
+## Overview/Main
+   The Overview or Main Dashboard is the main gateway to the other dashboards that focuses more on each farms and or buildings. The design of this dashboard is for convenience so that users, mainly field and office users, can easily see the latest data of each building in a single window. 
+
+   Furthermore, the users can also see the hourly trends of the data, the threshold status, the average from the day before and the average from the week before. The data trends allows easy telling whether this data has been increasing or decreasing from the past hour. The threshold status indicates whether the latest data has been going above or under the specified threshold. The average data from the day before and from the week before which allows the user to easily compare whether the current readings has been higher or lower compared to last day or last week.
+
+---
+class: img-disp
+
+## Overview/Main
+
+![image](https://private-user-images.githubusercontent.com/200733777/427785896-ecda699f-c428-4ce1-a365-f3e93ef6bdd0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDMzOTExMzAsIm5iZiI6MTc0MzM5MDgzMCwicGF0aCI6Ii8yMDA3MzM3NzcvNDI3Nzg1ODk2LWVjZGE2OTlmLWM0MjgtNGNlMS1hMzY1LWYzZTkzZWY2YmRkMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwMzEzNTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05NWZhNDQ3NmI2YTFhMzY4MDM3Yzk2M2U3ZmFhNTUwYzgzYzNiZDgwYjhjMDA0MjEyNjVhZjU1MjBkYzliN2U1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.VZDEWWb3R1O2zVfHowBAX79W7tgtvsmhie4f0hv5yvg)
+Overview/Main Dashboard Sample Look
+
+---
+class: widgets
+
+### Overview Widget
+
+This provides the users to quickly access relevant data from the dashboard as a table of values, without the need to browse, all the latest data are presented in a list, along with its trends, hourly or daily, on its sides. Furthermore, when this data is received is also placed so that user can easily understood that the data is recent or not. 
+* The first column provides the dataname of each data.
+* Next column is the latest data of that data source.
+* Next is the status of that datasource, providing whether this data is increasing or deacreasing from the last hour, as well as whether or not the threshold has been breached.
+* Lastly, the last two columns provides the average values from the last day, and the last week, respectively, in order to easily compare them to the latest data.
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427786102-e58564f5-4d34-471e-9e93-54c069c4c9a6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250327%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250327T233504Z&X-Amz-Expires=300&X-Amz-Signature=b20105bec5b32966625603df6d23426eef9648a04fec5fee030d892757f161e8&X-Amz-SignedHeaders=host)
+
+
+---
+
+##  Snapshot View
+   The snapshot dashboard is the dashboard which will provide the most details regarding the latest data for that building, this dashboard is made so that the user can focus on a single building and look at the data that the building has. Each building has their own snapshot and historic dashboard, and this dashboard allows the users to visualize the latest data from the sensors, as well as the necessary details that is needed for resource management for the building, and the chicken quality of each building. Office Users can oversee each building from this dashboard if there are certain things that the main dashboard cannot provide. 
+
+   This dashboard provide the more in-depth details regarding the latest data each building has.
+   - The 3 Device widget is here to present the data for the environment sensors (temp, rh, CO2, NH3) and show the hourly trend, and the average from previous day and previous week.
+   - Heat Index Chart to showcase the current heat index of the building and show the hourly trend, and the average from previous day and previous week.
+   - The Resource widget is here to present the latest data for the feed consumption and trends, Total feeds, and remaining feeds.
+   - The Chicken Quality widget is here to present the latest data for the ALW and trends, Mortality and trends, as well as the Current and Original Population.
+
+---
+class: img-disp
+##  Snapshot View
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427877798-db2d2eaa-dbc2-4854-bcd1-bea44b04ae23.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250328T064751Z&X-Amz-Expires=300&X-Amz-Signature=e69ecb58bde7bae8d89a609e93e5fdd0548aba52a6a3c9a36ef0c366aa5510d9&X-Amz-SignedHeaders=host)
+Snapshot Dashboard Sample Look
+
+---
+
+class: widgets
+
+### 3 Device Widget
+   This provides the user the ample data, first from the three sensors from each building, then the latest average data from the sensors. Furthermore, it allows user to easily identify anomalous, or outlying data and act accordingly.
+   * The widget shows reading from three sensors, the environment readings, as well as their connection to the server.
+   * Second, this provides the average between the three sensors, and an indicator whether said readings are above or below the set threshold.
+   * Third, this provides trend data, showcasing whether the current reading is increasing or decreasing for the current day.
+   * Lastly, this should show the average record from the day before and the week before to allow quick comparison between the current readings to the previous readings.
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/426872857-b5194223-8b37-4b58-98e2-278573d1eef8.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250327%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250327T095550Z&X-Amz-Expires=300&X-Amz-Signature=55ee6cf7ea8b2fe6ee628ad62a8f1180097c5d8450194e0845096b1374cccd19&X-Amz-SignedHeaders=host)
+
+---
+
+class: widgets
+
+### Resource Widget
+   This provides the details of the building with regards with resource management, and consumption. 
+   * **Remaining Feed Count:** to assess whether the building has sufficient feeds until the next fill up.
+   * **Total Feeds Consumed:** to assess the total amount of feed each cycle take for each building.
+   * **Total Feeds:** similar to the above, to assess the amount of feed placed to the building for the entirety of the cycle.
+   * **Daily Feed Consumption:** inputted from the app, this allows the users to track how much feed was consumed in a daily basis, and compare it to previous data. Additionally, the timestamp of when the data was last updated is also shown.
+   * **Average Daily Feed a week before, and a day before:** to allow quick comparison between the data, without needing to look at the graphs.
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/426872926-14fdb252-1c1a-44bd-b98e-21f765285b03.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250327%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250327T095602Z&X-Amz-Expires=300&X-Amz-Signature=7c05ef1940be96ca3295adbcb8ff7b164c0fcff62aefb3617f1d64f23c5ed5a8&X-Amz-SignedHeaders=host)
+
+---
+
+class: widgets
+
+### Chicken Quality Widget
+   This provides the details of the chicken quality, and quickly assess and compare the data from its previous readings. Additionally, it gives the amount of chickens still alive in the building, and the total amount at the start of the cycle.
+   * **Current Average Live Weight:** inputted from the app, this allows the users to track the current readings of the chicken's ALW, and compare it to previous data. Additionally, the timestamp of when the data was last updated is also shown.
+   * **ALW from a week before, and a day before:** to allow quick comparison between the data.
+   * **Current Population**
+   * **Total Population**
+   * **Daily Mortality:** inputted from the app, this allows users to track the current mortality of the chicken and compare them to previous data. Additionally, the timestamp of when the data was last updated is also shown.
+   * **Average Mortality from a week before, and a day before:** allows quick comparison between the data.
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/426872990-3f756c01-e727-4c02-9181-93119cfea8c7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250327%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250327T095614Z&X-Amz-Expires=300&X-Amz-Signature=bb650eab57ad4f1e47150eea100ba1715dfaaa32ade4eafa11f649d05a726ecb&X-Amz-SignedHeaders=host)
+
+---
+
+class: heat-index
+
+### Heat Index Widget
+   Uses the Temp and RH data from each device and create an average heat index chart for the building. Additionally, this chart also provides Threshold details, similar to the 3 device widget. 
+- The chart could look like this, which would look like any other heat index map.
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/425894731-8e9f77b0-ddce-45a0-9e56-c55c48760b79.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250328T052253Z&X-Amz-Expires=300&X-Amz-Signature=23b7624bb9910f405968f0784bdd94ad03873bac76b2e5885f54deab795c3734&X-Amz-SignedHeaders=host)
+
+- Or look like this, similar to already created charts for the dashboard.
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/426947797-b4e34533-6d03-4501-9422-c55f98c54cf7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250328T052236Z&X-Amz-Expires=300&X-Amz-Signature=5d8bff3dc85c55a60f4315f7268371f730dbb2388e84cc62ee49339c0d56758a&X-Amz-SignedHeaders=host)
+
+---
+
+##  Historic View
+
+   The Historic Dashboard is made in order to showcase the collected data from each cycle. Data Analysts can use this dashboard in order to study, infer, and create decisions for the farm itself. They can grab data and correlate them to each other and provide an educated response to such data. The dashboard itself is full of widgets which compares the data collected with time, or with each other.
+
+   The dashboard allows for initial comparison of input and output data through time using a timeseries lines chart, seeing if whether an increase of the input also has an increase to the output, or some other event. Additionally, another widget is made in order to clearly see the trend with the datasets, showing whether there is a significant correlation between two datasets, the input and output. And lastly, another widget is presented to the dashboard which showcase the series of data that cannot be shown as a graph for each cycle such as the population, and feed count.
+
+---
+class: img-disp
+
+##  Historic View
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427878140-f6a4a94e-c975-413e-b489-9103398809ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250328T064900Z&X-Amz-Expires=300&X-Amz-Signature=341f3f59a6db5eaf3377f2fda26aaff91fdd8526125fa1ac795adcbdc1dfaf72&X-Amz-SignedHeaders=host)
+Historic View Sample Look
+
+---
+
+class: widgets
+
+## Environment + Output Timeseries Chart
+   This chart showcases the trends of the environment readings (Temp, RH, CO2, NH3) as well as the Mortality and Feed Consumption. This allows quick comparison between the output and input and see whether there is a relationship between the two datasets.
+
+- **Chart Type**: Line Chart
+- **Input Data (per widget):** 
+  - Temperature
+  - Relative Humidity
+  - Ammonia
+  - Carbon Dioxide 
+  - Heat Index
+- **Input Data (present on all widgets):** 
+  - Mortality
+  - Average Live Weight
+  - Feed Consumption
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427860924-9f892078-7943-40a0-95b9-2955bd4b662c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250328T054104Z&X-Amz-Expires=300&X-Amz-Signature=a880cd3627a6cbfe76d7b6eb8199070ac82cab7702935902657654225c0f72d7&X-Amz-SignedHeaders=host)
+
+---
+
+class: widgets
+
+## Correlation Widget
+   This widget provides a clearer comparison between input and output data. The user can choose which input and output data will be used and the widget shall create the chart based on the datasets. Additionally, the widgets should also be able to create a correlation line, correlation and determination values, and their corresponding meaning.
+
+- **Chart Type**: Scatter Plot
+- **Input Data (x-axis):**
+  - Temperature
+  - Relative Humidity
+  - Ammonia
+  - Carbon Dioxide 
+  - Heat Index
+- **Output Data (y-axis):** 
+  - Mortality
+  - Average Live Weight
+  - Feed Consumption
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427873920-c3c603d8-228a-4c5b-aecc-a40fb745c625.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250328T063359Z&X-Amz-Expires=300&X-Amz-Signature=3bfc61e7b4de19bf01730c6dabf0ab0879142ea7ff7b9f567fcd27647f135182&X-Amz-SignedHeaders=host)
+
+---
+
+## Other Cycle Details
+   Some details cannot be disclosed in a graph or chart, as such, it is important to provide a way to present such cycle data within the historic dashboard in a way that best suits that data. As such, the other details widget is create in order to support those data. This widget is a table widget made to showcase datasets that are not timeseries, such as the population and feed count, their timeseries counterpart, mortality and feed consumption, respectively, can be portrait in chart and graphs, but these datasets can be shown best in a table, providing their initial data and their last data, as well as the ratio at which these data has changed.
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427866310-e64120b9-6dc1-4c0d-b261-8d9795ed4b91.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250328T060336Z&X-Amz-Expires=300&X-Amz-Signature=f862d3455162059c8acb6e72d99f54d7da4ae6cd9a2abf61e9af5d9cab72f545&X-Amz-SignedHeaders=host)
+---
+
+##  Farm Input/ Cycle Maintenance View
+
+   This dashboard is used by office users, and the owner, to create references and cycles which allows the dashboard to run smoothly. The cycles are the time wherein the farm will work with the current batch of chickens, and is used to group the data based on the date range. Additionally, each cycle needs reference data which is needed to evaluate the readings from the building, whether they were on trend, or going overboard the thresholds set within this dashboard as well. 
+
+   This dashboard has 2 main widgets, one to assign references and thresholds for each cycle. The other one is to create each cycle, their start and end date, as well as assign notes to each one.
+---
+class: img-disp
+##  Farm Input/ Cycle Maint
+![image](https://private-user-images.githubusercontent.com/200733777/427367950-5c477a2f-908f-4105-b50c-6ab8f87ac588.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDMzOTExMzAsIm5iZiI6MTc0MzM5MDgzMCwicGF0aCI6Ii8yMDA3MzM3NzcvNDI3MzY3OTUwLTVjNDc3YTJmLTkwOGYtNDEwNS1iNTBjLTZhYjhmODdhYzU4OC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwMzEzNTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jYTRhMTIyMjdlMjFkNTliMjU2YjFiNDVjYTE1YzZjODVjY2VkYjZmOGU3MWRhZjk2OTQ3YmUyYzk1YTcxODVjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9._F_M2uIahkQ7WCiLFIyVAjnc77nsVZMlBmpf-z7NFoE)
+Farm Input/Cycle Maintenance Dashboard Sample Look
+
+---
+class: widgets
+
+## Extended Farm Inputs Widget
+
+The widget allows users, mainly office user and owners, to input data that the building use as reference. The office and owner can use this to provide the references needed for each data, which are needed to start the cycle, such as the starting population and the starting feed count, as well as the references needed for the ALW, Mortality, and Feed Consumption, and lastly, as references for the sensor thresholds. The following are the data that can be edited/viewed in the widget:
+
+- **Inputs:**
+  - ALW Reference
+  - Mortality Reference
+  - Feed Consumption Reference
+  - Temperature Upper/Lower Threshold
+  - Humidity Upper/Lower Threshold
+  - Carbon Dioxide Upper/Lower Threshold
+  - Ammonia Upper/Lower Threshold
+  - Starting population
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427896405-8b66d2ac-add9-4fcf-b85c-965b5de92b4b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250328T073505Z&X-Amz-Expires=300&X-Amz-Signature=54b2d37c64bdfbe81b1a45776551bb3b6b24079f65bf1ff9ab9a56f5146682a7&X-Amz-SignedHeaders=host)
+---
+class: widgets
+
+## Cycle Maintenance Widget
+
+This widget allows users to quickly access the general details for each cycles, as well as place notes for each cycle. The Office, and owner can use this to initialize the data needed for each cycle, the name, start, and end, as well as add notes to each cycle, if needed be.
+
+- **Inputs:**
+  - Cycle Id
+  - Start Cycle
+  - End Cycle
+  - Cycle Name
+  - Notes
+
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/200733777/427896311-57d4098c-6da2-4030-b6c0-d27d8f37c4a1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250328T073437Z&X-Amz-Expires=300&X-Amz-Signature=9c4b4951a3f297e40c4b944e9ae145826e11e208a38289c0de2cbeb34cc7f9cf&X-Amz-SignedHeaders=host)
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
