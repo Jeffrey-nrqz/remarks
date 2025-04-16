@@ -19,7 +19,7 @@
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; display: flex}
 
       .remark-slide-content {
-         background-image: url(https://raw.githubusercontent.com/Jeffrey-nrqz/remarks/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/background.png?raw=true) !important;
+         background-image: url(https://raw.githubusercontent.com/Jeffrey-nrqz/remarks/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/background.png?raw=true) !important;
          background-size:     cover;                      /* <------ */
          background-repeat:   no-repeat;
          background-position: center center; 
@@ -51,8 +51,8 @@
       .img-disp p {text-align: center;}
       .img-disp img {max-height: 450px;}
 
-      .p-2img > p:has(img) { display: flex; width: 100%}
-      .p-2img > p > img { max-width: 500px; height: 500px; vertical-align: middle;}
+      .p-2img > p:has(img) { display: flex; width: 100%; overflow: hidden}
+      .p-2img > p > img { max-width: 500px; height: 450px; vertical-align: middle; width: 365px; object-fit: contain;}
 
       .landscape > p:has(img) { width: 100%}
       .landscape > p > img { max-width: 500px}
@@ -77,6 +77,15 @@
          top: 30%;
          width: 40%;
          height: 50%
+      }
+
+      .widgets p:last-of-type {
+         position: absolute;
+         right: 8%;
+         top: 82%;
+         width: 40%;
+         text-align : center;
+         text-indent: 0px;
       }
 
       .heat-index ul {width: 43%; position: absolute; left: 8%}
@@ -158,7 +167,7 @@ class: par-img
 The main menu screen is the first screen that the app user will see after their initial logging in to the app. The screen provides quick access to everything that the app provides, mainly the User Input Screens, the ALW, Mortality, Feed Consumption, and Feed Delivery. Additionally, the dashboard can also be accessed from the app by clicking the dashboard button. Lastly, more buttons are available in order to control the app and connection to the server as a whole, the settings button on the upper right allows inputting the device ID of each building, the list button on the lower right which allows users to upload the data previously inputted into the server once connection is secured. Lastly, a logout button is available if logging out is necessary.
 
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/06-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/06-1.png?raw=true)
 
 ---
 class: p-3img
@@ -168,9 +177,9 @@ class: p-3img
 The User Input Screens are made to easily input data from the building into the app and into the server. The users, mainly the field users, can use the app, without mobile data, and log their readings for the ALW, Mortality, and Feed Consumption into the app. The app logs the data inputted to the screen as well as the timestamp of logging, and send the data to the server once a connection is secured.
 
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/07-1.png?raw=true)
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/07-2.png?raw=true)
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/07-3.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/07-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/07-2.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/07-3.png?raw=true)
 ---
 class: par-img
 
@@ -178,7 +187,7 @@ class: par-img
 
 The Feed Delivery screen, much like the user input screens, allows the user to input the necessary data to the app. However, the main purpose of this screen is to allow the app user to see the current amount of feeds still in the building, as well as order feeds if need be.
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/08-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/08-1.png?raw=true)
 
 ---
 class: par-img
@@ -187,7 +196,7 @@ class: par-img
 
 The List Screen is where all the logs can be seen by the users before they are uploaded to the server. The users can see and edit the logs from all the user inputs from this screen, see when and who inputted the data, as well as delete it if needed. Lastly, a button is present at the bottom when there are data to be uploaded to the server. The button checks the connection and sends the data to the building selected, as configured in the settings screen.
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/09-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/09-1.png?raw=true)
 
 ---
 class: par-img
@@ -197,7 +206,7 @@ class: par-img
 
 The settings screen is where the users can configure the building profile, specifically, the building ID, as presented in the server. The user can select the building from the drop-down menu, after which, their building ID will present in the textbox below. The user can edit this then save using the save button right below the text box. The building ID needs to be similar to the building ID from the server so that the app could send the data specifically to that building without complications.
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/10-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/10-1.png?raw=true)
 
 ---
 class: title-page
@@ -223,7 +232,7 @@ class: img-disp
 
 ## Overview/Main
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/13-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/13-1.png?raw=true)
 
 Overview/Main Dashboard Sample Look on Desktop
 
@@ -232,8 +241,8 @@ class: img-disp p-2img
 
 ## Overview/Main
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/13-3.png?raw=true)
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/13-4.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/13-3.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/13-4.png?raw=true)
 
 Overview/Main Dashboard Sample Look on Mobile
 
@@ -245,12 +254,61 @@ class: widgets
 This provides the users to quickly access relevant data from the dashboard as a table of values, without the need to browse, all the latest data are presented in a list, along with its trends, hourly or daily, on its sides. Furthermore, when this data is received is also placed so that user can easily understood that the data is recent or not. 
 * The first column provides the name of each data.
 * Next column is the latest data of that data source.
-* Next is the status of that datasource, providing whether this data is increasing or decreasing from the last hour, as well as whether or not the threshold has been breached.
-* Lastly, the last two columns provides the average values from the last day, and the last week, respectively, in order to easily compare them to the latest data.
+* Next is the status of that datasource, providing whether this data is increasing or decreasing from the last hour, as well as whether or not the threshold has been breached. If no data is selected to show their status, this column will disappear.
+* The fourth and fifth columns provides the average values from the last day, and the last week, respectively, in order to easily compare them to the latest data.
+* Lastly, this column provides the timestamp from when the data is last updated. If the widget width is short enough, this column will transfer down as a separate row right below the datasource.
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/14-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/14-1.png?raw=true)
+
+Overview Widget as Designed
+
+---
+class: img-disp p-2img
+
+### Overview Widget
 
 
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/14-2.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/14-3.png?raw=true)
+
+Overview Widget as Coded with mobile and desktop views
+
+---
+
+### Overview Widget Settings
+
+The widget has 4 settings which allows the user to control the view and functionality of the widget.
+
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/14-4.png?raw=true)
+
+
+* The first setting sets the interval from which the average data will update, at default, the value is 60 or 1 minute, which can be adjust to how short or long the user wants.
+* The second setting is the widget number, this is a required settings with a default value of 1, this controls the script of the widget in order to allow multiple instances of the same widget to work in the same screen. Ensure that the value of this setting is not repeated for each widget.
+* The third setting controls which buttons will disappear when on mobile view, the user can input the label of each action, separated by comma.
+* The last setting is the minimum width of the widget before it converts to the mobile view of the widget, at default, the value is 420 pixels.
+---
+
+### Overview Widget Data Key Settings
+
+Each Data Key also has its own settings which controls what will happen to the data.
+
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/14-5.png?raw=true)
+
+* The first setting adds a break of 15px at the end of the row when this setting is set to true
+* The second setting hides the  data key when there is no recorded data for that data key, if set to false, the label of the data key will appear in its row but no data will be presented.
+* The third setting controls the aggregation of the data keys that are inputted using Aliases, data keys with the same labels will be aggregated and present only its average to the widget, if set to false, the data keys will be presented separately.
+* The show data trends setting allows the presentation of the hourly trend of this data key, if set to true, the status column will present a trending arrow pointing at either up or down depending if the data has increased or decreased from the last hour update, it will also show an equal sign if the current data and the data from last hour is roughly the same, with a 5% tolerance.
+
+---
+
+### Overview Widget Data Key Settings
+
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/14-6.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/14-7.png?raw=true)
+
+* The Data threshold settings will show a circular warning whenever the threshold was passed, the threshold can be assigned using a latest data key or a static value.
+* When not set to Static Threshold, the widget will look into the latest data keys for data sources that includes the string inputted.
+* When set to Static Threshold, the user can set a constant lower and upper threshold values into the inputs.
 ---
 
 ##  Snapshot View
@@ -266,7 +324,7 @@ This provides the users to quickly access relevant data from the dashboard as a 
 class: img-disp
 ##  Snapshot View
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/16-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/16-1.png?raw=true)
 
 Snapshot Dashboard Sample Look on Desktop
 
@@ -274,8 +332,8 @@ Snapshot Dashboard Sample Look on Desktop
 class: img-disp p-2img
 ##  Snapshot View
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/16-4.png?raw=true)
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/16-5.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/16-4.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/16-5.png?raw=true)
 
 Snapshot Dashboard Sample Look on Mobile
 
@@ -283,8 +341,8 @@ Snapshot Dashboard Sample Look on Mobile
 class: img-disp landscape
 ##  Snapshot View
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/16-6.png?raw=true)
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/16-7.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/16-6.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/16-7.png?raw=true)
 
 Snapshot Dashboard Sample Look on Mobile
 
@@ -293,34 +351,37 @@ Snapshot Dashboard Sample Look on Mobile
 class: widgets
 
 ### 3 Device Widget
-   This provides the user the ample data, first from the three sensors from each building, then the latest average data from the sensors. Furthermore, it allows user to easily identify anomalous, or outlying data and act accordingly.
+This provides the user the ample data, first from the three sensors from each building, then the latest average data from the sensors. Furthermore, it allows user to easily identify anomalous, or outlying data and act accordingly.
    * The widget shows reading from three sensors, the environment readings, as well as their connection to the server.
    * Second, this provides the average between the three sensors, and an indicator whether said readings are above or below the set threshold.
    * Third, this provides trend data, showcasing whether the current reading is increasing or decreasing for the current day.
    * Lastly, this should show the average record from the day before and the week before to allow quick comparison between the current readings to the previous readings.
 
-   ![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/17-1.png?raw=true)
 
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/17-1.png?raw=true)
+
+3 Device Widget as Designed
 ---
 
 class: widgets
 
 ### Resource Widget
-   This provides the details of the building with regards with resource management, and consumption. 
+This provides the details of the building with regards with resource management, and consumption. 
    * **Remaining Feed Count:** to assess whether the building has sufficient feeds until the next fill up.
    * **Total Feeds Consumed:** to assess the total amount of feed each cycle take for each building.
    * **Total Feeds:** similar to the above, to assess the amount of feed placed to the building for the entirety of the cycle.
    * **Daily Feed Consumption:** inputted from the app, this allows the users to track how much feed was consumed in a daily basis, and compare it to previous data. Additionally, the timestamp of when the data was last updated is also shown.
    * **Average Daily Feed a week before, and a day before:** to allow quick comparison between the data, without needing to look at the graphs.
 
-   ![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/18-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/18-1.png?raw=true)
 
+Resource Widget as Designed
 ---
 
 class: widgets
 
 ### Chicken Quality Widget
-   This provides the details of the chicken quality, and quickly assess and compare the data from its previous readings. Additionally, it gives the amount of chickens still alive in the building, and the total amount at the start of the cycle.
+This provides the details of the chicken quality, and quickly assess and compare the data from its previous readings. Additionally, it gives the amount of chickens still alive in the building, and the total amount at the start of the cycle.
    * **Current Average Live Weight:** inputted from the app, this allows the users to track the current readings of the chicken's ALW, and compare it to previous data. Additionally, the timestamp of when the data was last updated is also shown.
    * **ALW from a week before, and a day before:** to allow quick comparison between the data.
    * **Current Population**
@@ -329,8 +390,9 @@ class: widgets
    * **Average Mortality from a week before, and a day before:** allows quick comparison between the data.
 
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/19-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/19-1.png?raw=true)
 
+Chicken Quality Widget as Designed
 ---
 
 class: heat-index
@@ -339,11 +401,11 @@ class: heat-index
    Uses the Temp and RH data from each device and create an average heat index chart for the building. Additionally, this chart also provides Threshold details, similar to the 3 device widget. 
 - The chart could look like this, which would look like any other heat index map. This should provide clear relationship between relative humidity and temperature in order to tell the heat index.
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/20-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/20-1.png?raw=true)
 
 - Or look like this, similar to already created charts for the dashboard. This will provide coherence between all the charts within the dashboard.
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/20-2.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/20-2.png?raw=true)
 
 ---
 
@@ -358,7 +420,7 @@ class: img-disp
 
 ##  Historic View
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/22-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/22-1.png?raw=true)
 
 Historic View Sample Look on Desktop
 
@@ -367,8 +429,8 @@ class: img-disp p-2img
 
 ##  Historic View
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/22-4.png?raw=true)
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/22-5.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/22-4.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/22-5.png?raw=true)
 
 Historic View Sample Look on Mobile
 
@@ -377,8 +439,8 @@ class: img-disp landscape
 
 ##  Historic View
 
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/22-6.png?raw=true)
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/22-7.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/22-6.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/22-7.png?raw=true)
 
 Historic View Sample Look on Mobile
 
@@ -401,7 +463,7 @@ class: widgets
   - Average Live Weight
   - Feed Consumption
 
-  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/23-1.png?raw=true)
+  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/23-1.png?raw=true)
 
 ---
 
@@ -422,7 +484,7 @@ class: widgets
   - Average Live Weight
   - Feed Consumption
 
-  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/24-1.png?raw=true)
+  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/24-1.png?raw=true)
 
 
 ---
@@ -430,7 +492,7 @@ class: widgets
 ## Other Cycle Details
    Some details cannot be disclosed in a graph or chart, as such, it is important to provide a way to present such cycle data within the historic dashboard in a way that best suits that data. As such, the other details widget is create in order to support those data. This widget is a table widget made to showcase datasets that are not timeseries, such as the population and feed count, their timeseries counterpart, mortality and feed consumption, respectively, can be portrait in chart and graphs, but these datasets can be shown best in a table, providing their initial data and their last data, as well as the ratio at which these data has changed.
 
-   ![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/25-1.png?raw=true)
+   ![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/25-1.png?raw=true)
 
 ---
 
@@ -442,7 +504,7 @@ class: widgets
 ---
 class: img-disp
 ##  Farm Input/ Cycle Maintenance View
-![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/27-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/27-1.png?raw=true)
 
 Farm Input/Cycle Maintenance Dashboard Sample Look
 
@@ -463,7 +525,7 @@ The widget allows users, mainly office user and owners, to input data that the b
   - Ammonia Upper/Lower Threshold
   - Starting population
 
-  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/28-1.png?raw=true)
+  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/28-1.png?raw=true)
 
 ---
 class: widgets
@@ -479,7 +541,7 @@ This widget allows users to quickly access the general details for each cycles, 
   - Cycle Name
   - Notes
 
-  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/ee09c6cec2488976910785437b9865331b88673e/FarmWatch_Remark/assets/29-1.png?raw=true)
+  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/29-1.png?raw=true)
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
