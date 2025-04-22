@@ -216,9 +216,9 @@ class: title-page
 The dashboards are the main screens that the users can use to visualize and read the data that the buildings have, the dashboards have a general view, which is made to quickly read the necessary data for all buildings, as well as an in-depth view, made for each building, to allow users to have a more in depth analysis towards the data. Additionally, the last view is made to allow user to input references and inputs which are needed for each cycle.
 
 ### - [Overview/Main](#12)
-### - [Snapshot View](#15)
-### - [Historic View](#21)
-### - [Farm Input/Cycle Maintenance View](#26)
+### - [Snapshot View](#21)
+### - [Historic View](#29)
+### - [Farm Input/Cycle Maintenance View](#36)
 
 ---
 
@@ -309,6 +309,19 @@ Each Data Key also has its own settings which controls what will happen to the d
 * The Data threshold settings will show a circular warning whenever the threshold was passed, the threshold can be assigned using a latest data key or a static value.
 * When not set to Static Threshold, the widget will look into the latest data keys for data sources that includes the string inputted.
 * When set to Static Threshold, the user can set a constant lower and upper threshold values into the inputs.
+
+---
+
+
+### Overview Widget Actions
+
+The buttons of the overview widget is controlled by the actions set by the users in the action tab. 
+ 
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e093279f3393a5d65eca7f1432d9ce924ff8481a/FarmWatch_Remark/assets/14-8.png?raw=true)
+
+* All actions that has a 'Widget Header Button' action source will be placed in the button section of the widget and will run when the button is clicked. 
+* The name of the button will be based on the name of the Action.
+* The icon of the button is shown before the name, which can be hidden by typing 'hide' in the 'State entity parameter name' section.
 ---
 
 ##  Snapshot View
@@ -512,7 +525,6 @@ Farm Input/Cycle Maintenance Dashboard Sample Look
 class: widgets
 
 ## Extended Farm Inputs Widget
-
 The widget allows users, mainly office user and owners, to input data that the building use as reference. The office and owner can use this to provide the references needed for each data, which are needed to start the cycle, such as the starting population and the starting feed count, as well as the references needed for the ALW, Mortality, and Feed Consumption, and lastly, as references for the sensor thresholds. The following are the data that can be edited/viewed in the widget:
 
 - **Inputs:**
@@ -525,8 +537,9 @@ The widget allows users, mainly office user and owners, to input data that the b
   - Ammonia Upper/Lower Threshold
   - Starting population
 
-  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/28-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/28-1.png?raw=true)
 
+Extended Farm Inputs Widget
 ---
 class: widgets
 
@@ -541,8 +554,9 @@ This widget allows users to quickly access the general details for each cycles, 
   - Cycle Name
   - Notes
 
-  ![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/29-1.png?raw=true)
+![image](https://github.com/Jeffrey-nrqz/remarks/blob/e22f9e2b4c630ecbc2d078006b8e641b5f5d04ab/FarmWatch_Remark/assets/29-1.png?raw=true)
 
+Cycle Maintenance
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>
